@@ -11,19 +11,23 @@ export class RecipesService {
     new Recipe(
       'A Test Recipe',
       'This is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
-      [ new Ingredient('meat', 1) ]),
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo564O7d1wjTcxO0lY6mwQJYA0m475QCfMd3S8GCSNcLWQ5HRk',
+      [ new Ingredient('Meat', 1) ]),
     new Recipe(
       'A Test Recipe',
       'This is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
-      [ new Ingredient('Bread', 2) ])
+      'https://c1.staticflickr.com/6/5737/30622968353_35e06fcb52_b.jpg',
+      [ new Ingredient('Fruit', 2) ])
   ];
 
   constructor(private shoppingListService: ShoppingListService) {}
 
-  getRecipes() {
+  getRecipes(): Recipe[] {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number): Recipe {
+    return this.recipes[index];
   }
 
   addToShoppingList(ingredients: Ingredient[]) {
